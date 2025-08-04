@@ -1,0 +1,1576 @@
+{
+  "datasets": [
+    {
+      "name": "aed0df20",
+      "displayName": "county_population_agi",
+      "queryLines": [
+        "WITH growth AS (\n",
+        "  SELECT\n",
+        "    STNAME,\n",
+        "    CTYNAME,\n",
+        "    Location,\n",
+        "    PREDICTEDPOP2027,\n",
+        "    Predicted_AGI2027,\n",
+        "    AGI_per_capita_2027,\n",
+        "    Pop_Diff_2022_to_2027 AS Pop_Growth,\n",
+        "    Pop_PercChange_2022_to_2027 AS Pop_Growth_Perc,\n",
+        "    AGI_Diff_2022_to_2027 AS AGI_Growth,\n",
+        "    AGI_PercChange_2022_to_2027 AS AGI_Growth_Perc\n",
+        "  FROM ets_thriventcohort.default.county_population_agi\n",
+        "  WHERE Pop_Diff_2022_to_2027 > 0 AND AGI_Diff_2022_to_2027 > 0 and PREDICTEDPOP2027 > 250000 and AGI_per_capita_2027 > 40 and AGI2022 > 15000000\n",
+        "),\n",
+        "\n",
+        "ranked AS (\n",
+        "  SELECT *,\n",
+        "    RANK() OVER (ORDER BY Pop_Growth_Perc DESC) AS Pop_Rank,\n",
+        "    RANK() OVER (ORDER BY AGI_Growth_Perc DESC) AS AGI_Rank\n",
+        "  FROM growth\n",
+        ")\n",
+        "\n",
+        "SELECT *,\n",
+        "  (Pop_Rank + AGI_Rank) AS Composite_Score\n",
+        "FROM ranked\n",
+        "ORDER BY Composite_Score ASC\n",
+        "limit 50\n"
+      ]
+    },
+    {
+      "name": "4a48794c",
+      "displayName": "mn_county_population_agi",
+      "queryLines": [
+        "SELECT * FROM ets_thriventcohort.default.mn_county_population_agi\n",
+        "WHERE Location IN (\n",
+        "  ('Hennepin County, Minnesota'),\n",
+        "  ('Ramsey County, Minnesota'),\n",
+        "  ('Dakota County, Minnesota'),\n",
+        "  ('Anoka County, Minnesota'),\n",
+        "  ('Washington County, Minnesota'),\n",
+        "  ('Miami-Dade County, Florida')\n",
+        ")"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "018f9c9e",
+      "displayName": "Location Comparison",
+      "layout": [
+        {
+          "widget": {
+            "name": "d2d9c7bc",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Composite_Score",
+                      "expression": "`Composite_Score`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y"
+                    }
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "Composite_Score",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "Composite Score"
+                  },
+                  "displayName": "Composite Score"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Composite Score",
+                "showDescription": true,
+                "description": "Composite Score is the rank of each each county in population growth and AGI growth combined. (Lower is better)"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "389516a2",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f070d2ae551cae82f9d762838c643e_Location",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Location",
+                    "displayName": "Location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f070d2ae551cae82f9d762838c643e_Location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Miami-Dade County, Florida"
+                      },
+                      {
+                        "value": "Montgomery County, Texas"
+                      },
+                      {
+                        "value": "St. Johns County, Florida"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "e41da699",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "AGI_per_capita_2027",
+                      "expression": "`AGI_per_capita_2027`"
+                    },
+                    {
+                      "name": "AGI_Growth_Perc",
+                      "expression": "`AGI_Growth_Perc`"
+                    },
+                    {
+                      "name": "Pop_Growth_Perc",
+                      "expression": "`Pop_Growth_Perc`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "scatter",
+              "encodings": {
+                "x": {
+                  "fieldName": "AGI_Growth_Perc",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "min": 0,
+                      "max": 100
+                    }
+                  },
+                  "axis": {
+                    "title": "AGI Growth Percent"
+                  },
+                  "displayName": "AGI Growth Percent"
+                },
+                "y": {
+                  "fieldName": "Pop_Growth_Perc",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "min": 0,
+                      "max": 100
+                    }
+                  },
+                  "axis": {
+                    "title": "Population Growth Percent"
+                  },
+                  "displayName": "Population Growth Percent"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "size": {
+                  "fieldName": "AGI_per_capita_2027",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "AGI_per_capita_2027"
+                }
+              },
+              "frame": {
+                "showTitle": false,
+                "title": "",
+                "showDescription": true,
+                "description": "Size of the bubble is AGI per Capita"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "482db513",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Pop_Growth",
+                      "expression": "`Pop_Growth`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "Pop_Growth",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "Population Growth"
+                  },
+                  "displayName": "Population Growth"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Location Population Growth 2022-2027"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 7,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "81b45332",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "AGI_Growth",
+                      "expression": "`AGI_Growth`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "AGI_Growth",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "AGI Growth"
+                  },
+                  "displayName": "AGI Growth"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "AGI Growth 2022-2027"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 13,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "03de9814",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Pop_Growth_Perc",
+                      "expression": "`Pop_Growth_Perc`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "Pop_Growth_Perc",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Population Growth Percent"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Location Population Growth Percent 2022-2027"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 7,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "c2357675",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "AGI_Growth_Perc",
+                      "expression": "`AGI_Growth_Perc`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "AGI_Growth_Perc",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "AGI Growth Percent"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "AGI Growth Percentage 2022-2027"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 13,
+            "width": 3,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "83110bea",
+      "displayName": "Top Three Locations Visual Report",
+      "layout": [
+        {
+          "widget": {
+            "name": "f83f4a61",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "4a48794c",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "POPESTIMATE2022",
+                      "expression": "`POPESTIMATE2022`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "POPESTIMATE2022",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "max": 4000000
+                    }
+                  },
+                  "axis": {
+                    "title": "Population 2022"
+                  },
+                  "displayName": "Population 2022"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 7,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "735fe03a",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f070eef482133c860a9f9939308507_Location",
+                "query": {
+                  "datasetName": "4a48794c",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Location",
+                    "displayName": "Location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f070eef482133c860a9f9939308507_Location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "operator": {
+                    "operator": "AND",
+                    "args": []
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 3,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "e53a9cf3",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f070d2ae551cae82f9d762838c643e_Location",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Location",
+                    "displayName": "Location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f070d2ae551cae82f9d762838c643e_Location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Montgomery County, Texas"
+                      },
+                      {
+                        "value": "Miami-Dade County, Florida"
+                      },
+                      {
+                        "value": "St. Johns County, Florida"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 3,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "670fca1e",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "4a48794c",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "AGI2022",
+                      "expression": "`AGI2022`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "AGI2022",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "max": 300000000
+                    }
+                  },
+                  "axis": {
+                    "title": "AGI 2022"
+                  },
+                  "displayName": "AGI 2022"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "mark": {
+                "layout": "percent-stack"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 13,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "1b095197",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Predicted_AGI2027",
+                      "expression": "`Predicted_AGI2027`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "Predicted_AGI2027",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "Predicted AGI 2027"
+                  },
+                  "displayName": "Predicted AGI 2027"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 13,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "c83eaf8e",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "4a48794c",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "MN_AGI_per_capita_2022",
+                      "expression": "`MN_AGI_per_capita_2022`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "MN_AGI_per_capita_2022",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "max": 100
+                    }
+                  },
+                  "axis": {
+                    "title": "AGI per Capita 2022"
+                  },
+                  "displayName": "AGI per Capita 2022"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "mark": {
+                "layout": "percent-stack"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "d457044b",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "PREDICTEDPOP2027",
+                      "expression": "`PREDICTEDPOP2027`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "PREDICTEDPOP2027",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "Predicted Population 2027"
+                  },
+                  "displayName": "Predicted Population 2027"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 7,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "220c15db",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "AGI_per_capita_2027",
+                      "expression": "`AGI_per_capita_2027`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "Location"
+                },
+                "y": {
+                  "fieldName": "AGI_per_capita_2027",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "Predicted AGI per Capita 2027"
+                  },
+                  "displayName": "Predicted AGI per Capita 2027"
+                },
+                "color": {
+                  "fieldName": "Location",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Location"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "f9c75061",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aed0df20",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "PREDICTEDPOP2027",
+                      "expression": "`PREDICTEDPOP2027`"
+                    },
+                    {
+                      "name": "Predicted_AGI2027",
+                      "expression": "`Predicted_AGI2027`"
+                    },
+                    {
+                      "name": "AGI_per_capita_2027",
+                      "expression": "`AGI_per_capita_2027`"
+                    },
+                    {
+                      "name": "Pop_Growth",
+                      "expression": "`Pop_Growth`"
+                    },
+                    {
+                      "name": "Pop_Growth_Perc",
+                      "expression": "`Pop_Growth_Perc`"
+                    },
+                    {
+                      "name": "AGI_Growth",
+                      "expression": "`AGI_Growth`"
+                    },
+                    {
+                      "name": "AGI_Growth_Perc",
+                      "expression": "`AGI_Growth_Perc`"
+                    },
+                    {
+                      "name": "Pop_Rank",
+                      "expression": "`Pop_Rank`"
+                    },
+                    {
+                      "name": "AGI_Rank",
+                      "expression": "`AGI_Rank`"
+                    },
+                    {
+                      "name": "Composite_Score",
+                      "expression": "`Composite_Score`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "Location",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100002,
+                    "title": "Location",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Location"
+                  },
+                  {
+                    "fieldName": "PREDICTEDPOP2027",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100003,
+                    "title": "PREDICTEDPOP2027",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "PREDICTEDPOP2027"
+                  },
+                  {
+                    "fieldName": "Predicted_AGI2027",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100004,
+                    "title": "Predicted_AGI2027",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Predicted_AGI2027"
+                  },
+                  {
+                    "fieldName": "AGI_per_capita_2027",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100005,
+                    "title": "AGI_per_capita_2027",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_per_capita_2027"
+                  },
+                  {
+                    "fieldName": "Pop_Growth",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100006,
+                    "title": "Pop_Growth",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Pop_Growth"
+                  },
+                  {
+                    "fieldName": "Pop_Growth_Perc",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100007,
+                    "title": "Pop_Growth_Perc",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Pop_Growth_Perc"
+                  },
+                  {
+                    "fieldName": "AGI_Growth",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100008,
+                    "title": "AGI_Growth",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_Growth"
+                  },
+                  {
+                    "fieldName": "AGI_Growth_Perc",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100009,
+                    "title": "AGI_Growth_Perc",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_Growth_Perc"
+                  },
+                  {
+                    "fieldName": "Pop_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100010,
+                    "title": "Pop_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Pop_Rank"
+                  },
+                  {
+                    "fieldName": "AGI_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100011,
+                    "title": "AGI_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_Rank"
+                  },
+                  {
+                    "fieldName": "Composite_Score",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100012,
+                    "title": "Composite_Score",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Composite_Score"
+                  }
+                ]
+              },
+              "invisibleColumns": [
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "STNAME",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100000,
+                  "title": "STNAME",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "CTYNAME",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100001,
+                  "title": "CTYNAME",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                }
+              ],
+              "allowHTMLByDefault": false,
+              "itemsPerPage": 25,
+              "paginationSize": "default",
+              "condensed": true,
+              "withRowNumber": true
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 19,
+            "width": 6,
+            "height": 4
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    }
+  }
+}
