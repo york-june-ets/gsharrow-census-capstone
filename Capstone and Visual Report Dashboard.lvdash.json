@@ -48,6 +48,37 @@
         "  ('Miami-Dade County, Florida')\n",
         ")"
       ]
+    },
+    {
+      "name": "855dbe93",
+      "displayName": "county_forecast_combined",
+      "queryLines": [
+        "WITH growth AS (\n",
+        "  SELECT\n",
+        "    Location,\n",
+        "    AGI_2027_predicted,\n",
+        "    pop_2027_predicted,\n",
+        "    AGI_per_capita_2027,\n",
+        "    pop_change_raw AS Pop_Growth,\n",
+        "    pop_change_pct AS Pop_Growth_Perc,\n",
+        "    AGI_change_raw AS AGI_Growth,\n",
+        "    AGI_change_pct AS AGI_Growth_Perc\n",
+        "  FROM ets_thriventcohort.default.county_forecast_combined\n",
+        "  WHERE pop_change_raw > 0 AND AGI_change_raw > 0 and pop_2027_predicted > 250000 and AGI_2027_predicted > 20000000 and AGI_per_capita_2027 > 50 AND Location NOT LIKE '%Minnesota%'\n",
+        "),\n",
+        "\n",
+        "ranked AS (\n",
+        "  SELECT *,\n",
+        "    RANK() OVER (ORDER BY Pop_Growth_Perc DESC) AS Pop_Rank,\n",
+        "    RANK() OVER (ORDER BY AGI_Growth_Perc DESC) AS AGI_Rank\n",
+        "  FROM growth\n",
+        ")\n",
+        "\n",
+        "SELECT *,\n",
+        "  (Pop_Rank + AGI_Rank) AS Composite_Score\n",
+        "FROM ranked\n",
+        "ORDER BY Composite_Score ASC\n"
+      ]
     }
   ],
   "pages": [
@@ -62,7 +93,7 @@
               {
                 "name": "main_query",
                 "query": {
-                  "datasetName": "aed0df20",
+                  "datasetName": "855dbe93",
                   "fields": [
                     {
                       "name": "Location",
@@ -135,9 +166,9 @@
             "name": "389516a2",
             "queries": [
               {
-                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f070d2ae551cae82f9d762838c643e_Location",
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f077b565bb1a20ad6e2cb24c78ffb4_Location",
                 "query": {
-                  "datasetName": "aed0df20",
+                  "datasetName": "855dbe93",
                   "fields": [
                     {
                       "name": "Location",
@@ -160,7 +191,7 @@
                   {
                     "fieldName": "Location",
                     "displayName": "Location",
-                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f070d2ae551cae82f9d762838c643e_Location"
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f077b565bb1a20ad6e2cb24c78ffb4_Location"
                   }
                 ]
               },
@@ -176,10 +207,10 @@
                         "value": "Miami-Dade County, Florida"
                       },
                       {
-                        "value": "Montgomery County, Texas"
+                        "value": "St. Johns County, Florida"
                       },
                       {
-                        "value": "St. Johns County, Florida"
+                        "value": "Montgomery County, Texas"
                       }
                     ]
                   }
@@ -201,7 +232,7 @@
               {
                 "name": "main_query",
                 "query": {
-                  "datasetName": "aed0df20",
+                  "datasetName": "855dbe93",
                   "fields": [
                     {
                       "name": "Location",
@@ -293,7 +324,7 @@
               {
                 "name": "main_query",
                 "query": {
-                  "datasetName": "aed0df20",
+                  "datasetName": "855dbe93",
                   "fields": [
                     {
                       "name": "Location",
@@ -366,7 +397,7 @@
               {
                 "name": "main_query",
                 "query": {
-                  "datasetName": "aed0df20",
+                  "datasetName": "855dbe93",
                   "fields": [
                     {
                       "name": "Location",
@@ -439,7 +470,7 @@
               {
                 "name": "main_query",
                 "query": {
-                  "datasetName": "aed0df20",
+                  "datasetName": "855dbe93",
                   "fields": [
                     {
                       "name": "Location",
@@ -509,7 +540,7 @@
               {
                 "name": "main_query",
                 "query": {
-                  "datasetName": "aed0df20",
+                  "datasetName": "855dbe93",
                   "fields": [
                     {
                       "name": "Location",
@@ -577,7 +608,7 @@
     },
     {
       "name": "83110bea",
-      "displayName": "Top Three Locations Visual Report",
+      "displayName": "Montgomery County",
       "layout": [
         {
           "widget": {
@@ -1565,6 +1596,16 @@
           }
         }
       ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "f9d2612f",
+      "displayName": "Miami-Dade County",
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "60cf0577",
+      "displayName": "St. Johns County",
       "pageType": "PAGE_TYPE_CANVAS"
     }
   ],
