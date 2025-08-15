@@ -93,6 +93,2907 @@
   ],
   "pages": [
     {
+      "name": "8767281e",
+      "displayName": "St. Johns County, Florida",
+      "layout": [
+        {
+          "widget": {
+            "name": "ec70914a",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "f6b1ca27",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "year",
+                      "expression": "`year`"
+                    },
+                    {
+                      "name": "population_int",
+                      "expression": "`population_int`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "year",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "year"
+                },
+                "y": {
+                  "fieldName": "population_int",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "min": 0
+                    }
+                  },
+                  "displayName": "Population"
+                },
+                "color": {
+                  "fieldName": "location",
+                  "scale": {
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": "Hennepin County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 9
+                        }
+                      },
+                      {
+                        "value": "Miami-Dade County, Florida",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      },
+                      {
+                        "value": "Dakota County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 6
+                        }
+                      },
+                      {
+                        "value": "Washington County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      },
+                      {
+                        "value": "St. Johns County, Florida",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      }
+                    ]
+                  },
+                  "displayName": "location"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 3,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "eef08faf",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location",
+                "query": {
+                  "datasetName": "f6b1ca27",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "location",
+                    "displayName": "location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Hennepin County, Minnesota"
+                      },
+                      {
+                        "value": "Washington County, Minnesota"
+                      },
+                      {
+                        "value": "Dakota County, Minnesota"
+                      },
+                      {
+                        "value": "St. Johns County, Florida"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 3,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "fc4a6191",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "f128dad5",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "year",
+                      "expression": "`year`"
+                    },
+                    {
+                      "name": "AGI",
+                      "expression": "`AGI`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "year",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "year"
+                },
+                "y": {
+                  "fieldName": "AGI",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "AGI"
+                },
+                "color": {
+                  "fieldName": "location",
+                  "scale": {
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": "Miami-Dade County, Florida",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      },
+                      {
+                        "value": "Montgomery County, Texas",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      },
+                      {
+                        "value": "St. Johns County, Florida",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      },
+                      {
+                        "value": "Dakota County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 6
+                        }
+                      },
+                      {
+                        "value": "Washington County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      },
+                      {
+                        "value": "Hennepin County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 9
+                        }
+                      }
+                    ]
+                  },
+                  "displayName": "location"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 3,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "cbdf625a",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location",
+                "query": {
+                  "datasetName": "f128dad5",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "location",
+                    "displayName": "location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Hennepin County, Minnesota"
+                      },
+                      {
+                        "value": "Washington County, Minnesota"
+                      },
+                      {
+                        "value": "St. Johns County, Florida"
+                      },
+                      {
+                        "value": "Dakota County, Minnesota"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 2,
+            "width": 3,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "4e7c0c9e",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "71ec36b7",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "BIRTHS2024_int",
+                      "expression": "`BIRTHS2024_int`"
+                    },
+                    {
+                      "name": "DEATHS2024_int",
+                      "expression": "`DEATHS2024_int`"
+                    },
+                    {
+                      "name": "NETMIG2024_int",
+                      "expression": "`NETMIG2024_int`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "location",
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "custom-order",
+                      "orderedValues": [
+                        "Dakota County, Minnesota",
+                        "Hennepin County, Minnesota",
+                        "Washington County, Minnesota",
+                        "St. Johns County, Florida"
+                      ]
+                    }
+                  },
+                  "displayName": "location"
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "BIRTHS2024_int",
+                      "displayName": "Births 2024"
+                    },
+                    {
+                      "fieldName": "DEATHS2024_int",
+                      "displayName": "Deaths 2024"
+                    },
+                    {
+                      "fieldName": "NETMIG2024_int",
+                      "displayName": "Net Migration 2024"
+                    }
+                  ],
+                  "axis": {
+                    "title": "Population"
+                  }
+                }
+              },
+              "mark": {
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 9,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "33a3000d",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location",
+                "query": {
+                  "datasetName": "71ec36b7",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "location",
+                    "displayName": "location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Washington County, Minnesota"
+                      },
+                      {
+                        "value": "Hennepin County, Minnesota"
+                      },
+                      {
+                        "value": "Dakota County, Minnesota"
+                      },
+                      {
+                        "value": "St. Johns County, Florida"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 15,
+            "width": 6,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "5cf4d93c",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "855dbe93",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Pop_Growth_Perc",
+                      "expression": "`Pop_Growth_Perc`"
+                    },
+                    {
+                      "name": "AGI_Growth_Perc",
+                      "expression": "`AGI_Growth_Perc`"
+                    },
+                    {
+                      "name": "AGI_per_capita_2027",
+                      "expression": "`AGI_per_capita_2027`"
+                    },
+                    {
+                      "name": "Pop_Rank",
+                      "expression": "`Pop_Rank`"
+                    },
+                    {
+                      "name": "AGI_Rank",
+                      "expression": "`AGI_Rank`"
+                    },
+                    {
+                      "name": "Composite_Score",
+                      "expression": "`Composite_Score`"
+                    },
+                    {
+                      "name": "Composite_Rank",
+                      "expression": "`Composite_Rank`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "Location",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 0,
+                    "title": "Location",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Location"
+                  },
+                  {
+                    "fieldName": "Pop_Growth_Perc",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 4,
+                    "title": "Pop_Growth_Perc",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Pop_Growth_Perc"
+                  },
+                  {
+                    "fieldName": "AGI_Growth_Perc",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 6,
+                    "title": "AGI_Growth_Perc",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_Growth_Perc"
+                  },
+                  {
+                    "fieldName": "AGI_per_capita_2027",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 7,
+                    "title": "AGI_per_capita_2027",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_per_capita_2027"
+                  },
+                  {
+                    "fieldName": "Pop_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 8,
+                    "title": "Pop_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Pop_Rank"
+                  },
+                  {
+                    "fieldName": "AGI_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 9,
+                    "title": "AGI_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_Rank"
+                  },
+                  {
+                    "fieldName": "Composite_Score",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 10,
+                    "title": "Composite_Score",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Composite_Score"
+                  },
+                  {
+                    "fieldName": "Composite_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 11,
+                    "title": "Composite_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Composite_Rank"
+                  }
+                ]
+              },
+              "invisibleColumns": [
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "AGI_2027_predicted",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 1,
+                  "title": "AGI_2027_predicted",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "pop_2027_predicted",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 2,
+                  "title": "pop_2027_predicted",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Pop_Growth",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 3,
+                  "title": "Pop_Growth",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "AGI_Growth",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 5,
+                  "title": "AGI_Growth",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                }
+              ],
+              "allowHTMLByDefault": false,
+              "itemsPerPage": 25,
+              "paginationSize": "default",
+              "condensed": true,
+              "withRowNumber": false
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "81cf92fc",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f077b565bb1a20ad6e2cb24c78ffb4_Location",
+                "query": {
+                  "datasetName": "855dbe93",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Location",
+                    "displayName": "Location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f077b565bb1a20ad6e2cb24c78ffb4_Location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "St. Johns County, Florida"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 16,
+            "width": 6,
+            "height": 1
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "36903809",
+      "displayName": "Montgomery County, Texas",
+      "layout": [
+        {
+          "widget": {
+            "name": "58a8d51d",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "f6b1ca27",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "year",
+                      "expression": "`year`"
+                    },
+                    {
+                      "name": "population_int",
+                      "expression": "`population_int`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "year",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "year"
+                },
+                "y": {
+                  "fieldName": "population_int",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "min": 0
+                    }
+                  },
+                  "displayName": "Population"
+                },
+                "color": {
+                  "fieldName": "location",
+                  "scale": {
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": "Hennepin County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 9
+                        }
+                      },
+                      {
+                        "value": "Miami-Dade County, Florida",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      },
+                      {
+                        "value": "Dakota County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 6
+                        }
+                      },
+                      {
+                        "value": "Washington County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      },
+                      {
+                        "value": "Montgomery County, Texas",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      }
+                    ]
+                  },
+                  "displayName": "location"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 3,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "b081f328",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location",
+                "query": {
+                  "datasetName": "f6b1ca27",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "location",
+                    "displayName": "location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location"
+                  }
+                ]
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Hennepin County, Minnesota"
+                      },
+                      {
+                        "value": "Washington County, Minnesota"
+                      },
+                      {
+                        "value": "Dakota County, Minnesota"
+                      },
+                      {
+                        "value": "Montgomery County, Texas"
+                      }
+                    ]
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Location Pop"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 3,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "5d60978c",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "f128dad5",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "year",
+                      "expression": "`year`"
+                    },
+                    {
+                      "name": "AGI",
+                      "expression": "`AGI`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "year",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "year"
+                },
+                "y": {
+                  "fieldName": "AGI",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "AGI"
+                },
+                "color": {
+                  "fieldName": "location",
+                  "scale": {
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": "Miami-Dade County, Florida",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      },
+                      {
+                        "value": "Montgomery County, Texas",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      },
+                      {
+                        "value": "St. Johns County, Florida",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 6
+                        }
+                      },
+                      {
+                        "value": "Dakota County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 6
+                        }
+                      },
+                      {
+                        "value": "Washington County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      },
+                      {
+                        "value": "Hennepin County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 9
+                        }
+                      }
+                    ]
+                  },
+                  "displayName": "location"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 3,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "3beec418",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location",
+                "query": {
+                  "datasetName": "f128dad5",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "location",
+                    "displayName": "location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location"
+                  }
+                ]
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Hennepin County, Minnesota"
+                      },
+                      {
+                        "value": "Dakota County, Minnesota"
+                      },
+                      {
+                        "value": "Washington County, Minnesota"
+                      },
+                      {
+                        "value": "Montgomery County, Texas"
+                      }
+                    ]
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Location AGI"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 2,
+            "width": 3,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "41741d86",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "71ec36b7",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "BIRTHS2024_int",
+                      "expression": "`BIRTHS2024_int`"
+                    },
+                    {
+                      "name": "DEATHS2024_int",
+                      "expression": "`DEATHS2024_int`"
+                    },
+                    {
+                      "name": "NETMIG2024_int",
+                      "expression": "`NETMIG2024_int`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "location",
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "custom-order",
+                      "orderedValues": [
+                        "Dakota County, Minnesota",
+                        "Hennepin County, Minnesota",
+                        "Washington County, Minnesota",
+                        "Miami-Dade County, Florida"
+                      ]
+                    }
+                  },
+                  "displayName": "location"
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "BIRTHS2024_int",
+                      "displayName": "Births 2024"
+                    },
+                    {
+                      "fieldName": "DEATHS2024_int",
+                      "displayName": "Deaths 2024"
+                    },
+                    {
+                      "fieldName": "NETMIG2024_int",
+                      "displayName": "Net Migration 2024"
+                    }
+                  ],
+                  "axis": {
+                    "title": "Population"
+                  }
+                }
+              },
+              "mark": {
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 9,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "8b4326a4",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location",
+                "query": {
+                  "datasetName": "71ec36b7",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "location",
+                    "displayName": "location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Washington County, Minnesota"
+                      },
+                      {
+                        "value": "Hennepin County, Minnesota"
+                      },
+                      {
+                        "value": "Dakota County, Minnesota"
+                      },
+                      {
+                        "value": "Montgomery County, Texas"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 15,
+            "width": 6,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "03c4e255",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "855dbe93",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Pop_Growth_Perc",
+                      "expression": "`Pop_Growth_Perc`"
+                    },
+                    {
+                      "name": "AGI_Growth_Perc",
+                      "expression": "`AGI_Growth_Perc`"
+                    },
+                    {
+                      "name": "AGI_per_capita_2027",
+                      "expression": "`AGI_per_capita_2027`"
+                    },
+                    {
+                      "name": "Pop_Rank",
+                      "expression": "`Pop_Rank`"
+                    },
+                    {
+                      "name": "AGI_Rank",
+                      "expression": "`AGI_Rank`"
+                    },
+                    {
+                      "name": "Composite_Score",
+                      "expression": "`Composite_Score`"
+                    },
+                    {
+                      "name": "Composite_Rank",
+                      "expression": "`Composite_Rank`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "Location",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 0,
+                    "title": "Location",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Location"
+                  },
+                  {
+                    "fieldName": "Pop_Growth_Perc",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 4,
+                    "title": "Pop_Growth_Perc",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Pop_Growth_Perc"
+                  },
+                  {
+                    "fieldName": "AGI_Growth_Perc",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 6,
+                    "title": "AGI_Growth_Perc",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_Growth_Perc"
+                  },
+                  {
+                    "fieldName": "AGI_per_capita_2027",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 7,
+                    "title": "AGI_per_capita_2027",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_per_capita_2027"
+                  },
+                  {
+                    "fieldName": "Pop_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 8,
+                    "title": "Pop_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Pop_Rank"
+                  },
+                  {
+                    "fieldName": "AGI_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 9,
+                    "title": "AGI_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_Rank"
+                  },
+                  {
+                    "fieldName": "Composite_Score",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 10,
+                    "title": "Composite_Score",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Composite_Score"
+                  },
+                  {
+                    "fieldName": "Composite_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 11,
+                    "title": "Composite_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Composite_Rank"
+                  }
+                ]
+              },
+              "invisibleColumns": [
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "AGI_2027_predicted",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 1,
+                  "title": "AGI_2027_predicted",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "pop_2027_predicted",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 2,
+                  "title": "pop_2027_predicted",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Pop_Growth",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 3,
+                  "title": "Pop_Growth",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "AGI_Growth",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 5,
+                  "title": "AGI_Growth",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                }
+              ],
+              "allowHTMLByDefault": false,
+              "itemsPerPage": 25,
+              "paginationSize": "default",
+              "condensed": true,
+              "withRowNumber": false
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "e60df712",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f077b565bb1a20ad6e2cb24c78ffb4_Location",
+                "query": {
+                  "datasetName": "855dbe93",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Location",
+                    "displayName": "Location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f077b565bb1a20ad6e2cb24c78ffb4_Location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Montgomery County, Texas"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 16,
+            "width": 6,
+            "height": 1
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "f9d2612f",
+      "displayName": "Miami-Dade County, Florida",
+      "layout": [
+        {
+          "widget": {
+            "name": "6544990a",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "f6b1ca27",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "year",
+                      "expression": "`year`"
+                    },
+                    {
+                      "name": "population_int",
+                      "expression": "`population_int`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "year",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "year"
+                },
+                "y": {
+                  "fieldName": "population_int",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "min": 0
+                    }
+                  },
+                  "displayName": "Population"
+                },
+                "color": {
+                  "fieldName": "location",
+                  "scale": {
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": "Hennepin County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 9
+                        }
+                      },
+                      {
+                        "value": "Miami-Dade County, Florida",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      },
+                      {
+                        "value": "Washington County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      },
+                      {
+                        "value": "Dakota County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 6
+                        }
+                      }
+                    ]
+                  },
+                  "displayName": "location"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 3,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "b0d0c4f6",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location",
+                "query": {
+                  "datasetName": "f6b1ca27",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "location",
+                    "displayName": "location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location"
+                  }
+                ]
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Miami-Dade County, Florida"
+                      },
+                      {
+                        "value": "Hennepin County, Minnesota"
+                      },
+                      {
+                        "value": "Washington County, Minnesota"
+                      },
+                      {
+                        "value": "Dakota County, Minnesota"
+                      }
+                    ]
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Location Pop"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 3,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "4caee73b",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "f128dad5",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "year",
+                      "expression": "`year`"
+                    },
+                    {
+                      "name": "AGI",
+                      "expression": "`AGI`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "year",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "year"
+                },
+                "y": {
+                  "fieldName": "AGI",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "AGI"
+                },
+                "color": {
+                  "fieldName": "location",
+                  "scale": {
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": "Miami-Dade County, Florida",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      },
+                      {
+                        "value": "Montgomery County, Texas",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 2
+                        }
+                      },
+                      {
+                        "value": "St. Johns County, Florida",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 6
+                        }
+                      },
+                      {
+                        "value": "Dakota County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 6
+                        }
+                      },
+                      {
+                        "value": "Washington County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      },
+                      {
+                        "value": "Hennepin County, Minnesota",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 9
+                        }
+                      }
+                    ]
+                  },
+                  "displayName": "location"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 3,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "90a74603",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location",
+                "query": {
+                  "datasetName": "f128dad5",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "location",
+                    "displayName": "location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location"
+                  }
+                ]
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Miami-Dade County, Florida"
+                      },
+                      {
+                        "value": "Hennepin County, Minnesota"
+                      },
+                      {
+                        "value": "Dakota County, Minnesota"
+                      },
+                      {
+                        "value": "Washington County, Minnesota"
+                      }
+                    ]
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Location AGI"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 2,
+            "width": 3,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "b61243e6",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "71ec36b7",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "BIRTHS2024_int",
+                      "expression": "`BIRTHS2024_int`"
+                    },
+                    {
+                      "name": "DEATHS2024_int",
+                      "expression": "`DEATHS2024_int`"
+                    },
+                    {
+                      "name": "NETMIG2024_int",
+                      "expression": "`NETMIG2024_int`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "location",
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "custom-order",
+                      "orderedValues": [
+                        "Dakota County, Minnesota",
+                        "Hennepin County, Minnesota",
+                        "Washington County, Minnesota",
+                        "Miami-Dade County, Florida"
+                      ]
+                    }
+                  },
+                  "displayName": "location"
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "BIRTHS2024_int",
+                      "displayName": "Births 2024"
+                    },
+                    {
+                      "fieldName": "DEATHS2024_int",
+                      "displayName": "Deaths 2024"
+                    },
+                    {
+                      "fieldName": "NETMIG2024_int",
+                      "displayName": "Net Migration 2024"
+                    }
+                  ],
+                  "axis": {
+                    "title": "Population"
+                  }
+                }
+              },
+              "mark": {
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 9,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "e40fb9c1",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location",
+                "query": {
+                  "datasetName": "71ec36b7",
+                  "fields": [
+                    {
+                      "name": "location",
+                      "expression": "`location`"
+                    },
+                    {
+                      "name": "location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "location",
+                    "displayName": "location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Miami-Dade County, Florida"
+                      },
+                      {
+                        "value": "Washington County, Minnesota"
+                      },
+                      {
+                        "value": "Hennepin County, Minnesota"
+                      },
+                      {
+                        "value": "Dakota County, Minnesota"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 15,
+            "width": 6,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "d257715c",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "855dbe93",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Pop_Growth_Perc",
+                      "expression": "`Pop_Growth_Perc`"
+                    },
+                    {
+                      "name": "AGI_Growth_Perc",
+                      "expression": "`AGI_Growth_Perc`"
+                    },
+                    {
+                      "name": "AGI_per_capita_2027",
+                      "expression": "`AGI_per_capita_2027`"
+                    },
+                    {
+                      "name": "Pop_Rank",
+                      "expression": "`Pop_Rank`"
+                    },
+                    {
+                      "name": "AGI_Rank",
+                      "expression": "`AGI_Rank`"
+                    },
+                    {
+                      "name": "Composite_Score",
+                      "expression": "`Composite_Score`"
+                    },
+                    {
+                      "name": "Composite_Rank",
+                      "expression": "`Composite_Rank`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "Location",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 0,
+                    "title": "Location",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Location"
+                  },
+                  {
+                    "fieldName": "Pop_Growth_Perc",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 4,
+                    "title": "Pop_Growth_Perc",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Pop_Growth_Perc"
+                  },
+                  {
+                    "fieldName": "AGI_Growth_Perc",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 6,
+                    "title": "AGI_Growth_Perc",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_Growth_Perc"
+                  },
+                  {
+                    "fieldName": "AGI_per_capita_2027",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 7,
+                    "title": "AGI_per_capita_2027",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_per_capita_2027"
+                  },
+                  {
+                    "fieldName": "Pop_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 8,
+                    "title": "Pop_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Pop_Rank"
+                  },
+                  {
+                    "fieldName": "AGI_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 9,
+                    "title": "AGI_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "AGI_Rank"
+                  },
+                  {
+                    "fieldName": "Composite_Score",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 10,
+                    "title": "Composite_Score",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Composite_Score"
+                  },
+                  {
+                    "fieldName": "Composite_Rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 11,
+                    "title": "Composite_Rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "Composite_Rank"
+                  }
+                ]
+              },
+              "invisibleColumns": [
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "AGI_2027_predicted",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 1,
+                  "title": "AGI_2027_predicted",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "pop_2027_predicted",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 2,
+                  "title": "pop_2027_predicted",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Pop_Growth",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 3,
+                  "title": "Pop_Growth",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "AGI_Growth",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 5,
+                  "title": "AGI_Growth",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                }
+              ],
+              "allowHTMLByDefault": false,
+              "itemsPerPage": 25,
+              "paginationSize": "default",
+              "condensed": true,
+              "withRowNumber": false
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "d1a69920",
+            "queries": [
+              {
+                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f077b565bb1a20ad6e2cb24c78ffb4_Location",
+                "query": {
+                  "datasetName": "855dbe93",
+                  "fields": [
+                    {
+                      "name": "Location",
+                      "expression": "`Location`"
+                    },
+                    {
+                      "name": "Location_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Location",
+                    "displayName": "Location",
+                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f077b565bb1a20ad6e2cb24c78ffb4_Location"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "STRING",
+                    "values": [
+                      {
+                        "value": "Miami-Dade County, Florida"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 16,
+            "width": 6,
+            "height": 1
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
       "name": "018f9c9e",
       "displayName": "Location Comparison",
       "layout": [
@@ -390,7 +3291,23 @@
                 "color": {
                   "fieldName": "Location",
                   "scale": {
-                    "type": "categorical"
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": "Allegheny County, Pennsylvania",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 7
+                        }
+                      },
+                      {
+                        "value": "Albany County, New York",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 6
+                        }
+                      }
+                    ]
                   },
                   "displayName": "Location"
                 },
@@ -869,1524 +3786,6 @@
             "y": 13,
             "width": 6,
             "height": 5
-          }
-        }
-      ],
-      "pageType": "PAGE_TYPE_CANVAS"
-    },
-    {
-      "name": "f9d2612f",
-      "displayName": "Miami-Dade County, Florida",
-      "layout": [
-        {
-          "widget": {
-            "name": "6544990a",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "f6b1ca27",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "year",
-                      "expression": "`year`"
-                    },
-                    {
-                      "name": "population_int",
-                      "expression": "`population_int`"
-                    }
-                  ],
-                  "disaggregated": true
-                }
-              }
-            ],
-            "spec": {
-              "version": 3,
-              "widgetType": "line",
-              "encodings": {
-                "x": {
-                  "fieldName": "year",
-                  "scale": {
-                    "type": "categorical"
-                  },
-                  "axis": {
-                    "labelAngle": 0
-                  },
-                  "displayName": "year"
-                },
-                "y": {
-                  "fieldName": "population_int",
-                  "scale": {
-                    "type": "quantitative",
-                    "domain": {
-                      "min": 0
-                    }
-                  },
-                  "displayName": "Population"
-                },
-                "color": {
-                  "fieldName": "location",
-                  "scale": {
-                    "type": "categorical",
-                    "mappings": [
-                      {
-                        "value": "Hennepin County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 9
-                        }
-                      },
-                      {
-                        "value": "Miami-Dade County, Florida",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      }
-                    ]
-                  },
-                  "displayName": "location"
-                },
-                "label": {
-                  "show": true
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 1,
-            "width": 3,
-            "height": 6
-          }
-        },
-        {
-          "widget": {
-            "name": "b0d0c4f6",
-            "queries": [
-              {
-                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location",
-                "query": {
-                  "datasetName": "f6b1ca27",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "location_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-multi-select",
-              "encodings": {
-                "fields": [
-                  {
-                    "fieldName": "location",
-                    "displayName": "location",
-                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location"
-                  }
-                ]
-              },
-              "selection": {
-                "defaultSelection": {
-                  "values": {
-                    "dataType": "STRING",
-                    "values": [
-                      {
-                        "value": "Miami-Dade County, Florida"
-                      },
-                      {
-                        "value": "Hennepin County, Minnesota"
-                      },
-                      {
-                        "value": "Washington County, Minnesota"
-                      },
-                      {
-                        "value": "Dakota County, Minnesota"
-                      }
-                    ]
-                  }
-                }
-              },
-              "frame": {
-                "showTitle": true,
-                "title": "Location Pop"
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 0,
-            "width": 3,
-            "height": 1
-          }
-        },
-        {
-          "widget": {
-            "name": "4caee73b",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "f128dad5",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "year",
-                      "expression": "`year`"
-                    },
-                    {
-                      "name": "AGI",
-                      "expression": "`AGI`"
-                    }
-                  ],
-                  "disaggregated": true
-                }
-              }
-            ],
-            "spec": {
-              "version": 3,
-              "widgetType": "line",
-              "encodings": {
-                "x": {
-                  "fieldName": "year",
-                  "scale": {
-                    "type": "categorical"
-                  },
-                  "axis": {
-                    "labelAngle": 0
-                  },
-                  "displayName": "year"
-                },
-                "y": {
-                  "fieldName": "AGI",
-                  "scale": {
-                    "type": "quantitative"
-                  },
-                  "displayName": "AGI"
-                },
-                "color": {
-                  "fieldName": "location",
-                  "scale": {
-                    "type": "categorical",
-                    "mappings": [
-                      {
-                        "value": "Miami-Dade County, Florida",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      },
-                      {
-                        "value": "Montgomery County, Texas",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      },
-                      {
-                        "value": "St. Johns County, Florida",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 6
-                        }
-                      },
-                      {
-                        "value": "Dakota County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 6
-                        }
-                      },
-                      {
-                        "value": "Washington County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 3
-                        }
-                      }
-                    ]
-                  },
-                  "displayName": "location"
-                },
-                "label": {
-                  "show": true
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 3,
-            "y": 1,
-            "width": 3,
-            "height": 6
-          }
-        },
-        {
-          "widget": {
-            "name": "90a74603",
-            "queries": [
-              {
-                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location",
-                "query": {
-                  "datasetName": "f128dad5",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "location_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-multi-select",
-              "encodings": {
-                "fields": [
-                  {
-                    "fieldName": "location",
-                    "displayName": "location",
-                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location"
-                  }
-                ]
-              },
-              "selection": {
-                "defaultSelection": {
-                  "values": {
-                    "dataType": "STRING",
-                    "values": [
-                      {
-                        "value": "Miami-Dade County, Florida"
-                      },
-                      {
-                        "value": "Hennepin County, Minnesota"
-                      },
-                      {
-                        "value": "Dakota County, Minnesota"
-                      },
-                      {
-                        "value": "Washington County, Minnesota"
-                      }
-                    ]
-                  }
-                }
-              },
-              "frame": {
-                "showTitle": true,
-                "title": "Location AGI"
-              }
-            }
-          },
-          "position": {
-            "x": 3,
-            "y": 0,
-            "width": 3,
-            "height": 1
-          }
-        },
-        {
-          "widget": {
-            "name": "b61243e6",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "71ec36b7",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "BIRTHS2024_int",
-                      "expression": "`BIRTHS2024_int`"
-                    },
-                    {
-                      "name": "DEATHS2024_int",
-                      "expression": "`DEATHS2024_int`"
-                    },
-                    {
-                      "name": "NETMIG2024_int",
-                      "expression": "`NETMIG2024_int`"
-                    }
-                  ],
-                  "disaggregated": true
-                }
-              }
-            ],
-            "spec": {
-              "version": 3,
-              "widgetType": "bar",
-              "encodings": {
-                "x": {
-                  "fieldName": "location",
-                  "axis": {
-                    "labelAngle": 0
-                  },
-                  "scale": {
-                    "type": "categorical",
-                    "sort": {
-                      "by": "custom-order",
-                      "orderedValues": [
-                        "Dakota County, Minnesota",
-                        "Hennepin County, Minnesota",
-                        "Washington County, Minnesota",
-                        "Miami-Dade County, Florida"
-                      ]
-                    }
-                  },
-                  "displayName": "location"
-                },
-                "y": {
-                  "scale": {
-                    "type": "quantitative"
-                  },
-                  "fields": [
-                    {
-                      "fieldName": "BIRTHS2024_int",
-                      "displayName": "Births 2024"
-                    },
-                    {
-                      "fieldName": "DEATHS2024_int",
-                      "displayName": "Deaths 2024"
-                    },
-                    {
-                      "fieldName": "NETMIG2024_int",
-                      "displayName": "Net Migration 2024"
-                    }
-                  ],
-                  "axis": {
-                    "title": "Population"
-                  }
-                }
-              },
-              "mark": {
-                "layout": "group"
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 7,
-            "width": 6,
-            "height": 6
-          }
-        },
-        {
-          "widget": {
-            "name": "e40fb9c1",
-            "queries": [
-              {
-                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location",
-                "query": {
-                  "datasetName": "71ec36b7",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "location_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-multi-select",
-              "encodings": {
-                "fields": [
-                  {
-                    "fieldName": "location",
-                    "displayName": "location",
-                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location"
-                  }
-                ]
-              },
-              "frame": {
-                "showTitle": true
-              },
-              "selection": {
-                "defaultSelection": {
-                  "values": {
-                    "dataType": "STRING",
-                    "values": [
-                      {
-                        "value": "Miami-Dade County, Florida"
-                      },
-                      {
-                        "value": "Washington County, Minnesota"
-                      },
-                      {
-                        "value": "Hennepin County, Minnesota"
-                      },
-                      {
-                        "value": "Dakota County, Minnesota"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 13,
-            "width": 6,
-            "height": 1
-          }
-        }
-      ],
-      "pageType": "PAGE_TYPE_CANVAS"
-    },
-    {
-      "name": "36903809",
-      "displayName": "Montgomery County, Texas",
-      "layout": [
-        {
-          "widget": {
-            "name": "58a8d51d",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "f6b1ca27",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "year",
-                      "expression": "`year`"
-                    },
-                    {
-                      "name": "population_int",
-                      "expression": "`population_int`"
-                    }
-                  ],
-                  "disaggregated": true
-                }
-              }
-            ],
-            "spec": {
-              "version": 3,
-              "widgetType": "line",
-              "encodings": {
-                "x": {
-                  "fieldName": "year",
-                  "scale": {
-                    "type": "categorical"
-                  },
-                  "axis": {
-                    "labelAngle": 0
-                  },
-                  "displayName": "year"
-                },
-                "y": {
-                  "fieldName": "population_int",
-                  "scale": {
-                    "type": "quantitative",
-                    "domain": {
-                      "min": 0
-                    }
-                  },
-                  "displayName": "Population"
-                },
-                "color": {
-                  "fieldName": "location",
-                  "scale": {
-                    "type": "categorical",
-                    "mappings": [
-                      {
-                        "value": "Hennepin County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 9
-                        }
-                      },
-                      {
-                        "value": "Miami-Dade County, Florida",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      },
-                      {
-                        "value": "Dakota County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 6
-                        }
-                      },
-                      {
-                        "value": "Washington County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 3
-                        }
-                      },
-                      {
-                        "value": "Montgomery County, Texas",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      }
-                    ]
-                  },
-                  "displayName": "location"
-                },
-                "label": {
-                  "show": true
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 1,
-            "width": 3,
-            "height": 6
-          }
-        },
-        {
-          "widget": {
-            "name": "b081f328",
-            "queries": [
-              {
-                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location",
-                "query": {
-                  "datasetName": "f6b1ca27",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "location_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-multi-select",
-              "encodings": {
-                "fields": [
-                  {
-                    "fieldName": "location",
-                    "displayName": "location",
-                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location"
-                  }
-                ]
-              },
-              "selection": {
-                "defaultSelection": {
-                  "values": {
-                    "dataType": "STRING",
-                    "values": [
-                      {
-                        "value": "Hennepin County, Minnesota"
-                      },
-                      {
-                        "value": "Washington County, Minnesota"
-                      },
-                      {
-                        "value": "Dakota County, Minnesota"
-                      },
-                      {
-                        "value": "Montgomery County, Texas"
-                      }
-                    ]
-                  }
-                }
-              },
-              "frame": {
-                "showTitle": true,
-                "title": "Location Pop"
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 0,
-            "width": 3,
-            "height": 1
-          }
-        },
-        {
-          "widget": {
-            "name": "5d60978c",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "f128dad5",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "year",
-                      "expression": "`year`"
-                    },
-                    {
-                      "name": "AGI",
-                      "expression": "`AGI`"
-                    }
-                  ],
-                  "disaggregated": true
-                }
-              }
-            ],
-            "spec": {
-              "version": 3,
-              "widgetType": "line",
-              "encodings": {
-                "x": {
-                  "fieldName": "year",
-                  "scale": {
-                    "type": "categorical"
-                  },
-                  "axis": {
-                    "labelAngle": 0
-                  },
-                  "displayName": "year"
-                },
-                "y": {
-                  "fieldName": "AGI",
-                  "scale": {
-                    "type": "quantitative"
-                  },
-                  "displayName": "AGI"
-                },
-                "color": {
-                  "fieldName": "location",
-                  "scale": {
-                    "type": "categorical",
-                    "mappings": [
-                      {
-                        "value": "Miami-Dade County, Florida",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      },
-                      {
-                        "value": "Montgomery County, Texas",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      },
-                      {
-                        "value": "St. Johns County, Florida",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 6
-                        }
-                      },
-                      {
-                        "value": "Dakota County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 6
-                        }
-                      },
-                      {
-                        "value": "Washington County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 3
-                        }
-                      },
-                      {
-                        "value": "Hennepin County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 9
-                        }
-                      }
-                    ]
-                  },
-                  "displayName": "location"
-                },
-                "label": {
-                  "show": true
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 3,
-            "y": 1,
-            "width": 3,
-            "height": 6
-          }
-        },
-        {
-          "widget": {
-            "name": "3beec418",
-            "queries": [
-              {
-                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location",
-                "query": {
-                  "datasetName": "f128dad5",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "location_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-multi-select",
-              "encodings": {
-                "fields": [
-                  {
-                    "fieldName": "location",
-                    "displayName": "location",
-                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location"
-                  }
-                ]
-              },
-              "selection": {
-                "defaultSelection": {
-                  "values": {
-                    "dataType": "STRING",
-                    "values": [
-                      {
-                        "value": "Hennepin County, Minnesota"
-                      },
-                      {
-                        "value": "Dakota County, Minnesota"
-                      },
-                      {
-                        "value": "Washington County, Minnesota"
-                      },
-                      {
-                        "value": "Montgomery County, Texas"
-                      }
-                    ]
-                  }
-                }
-              },
-              "frame": {
-                "showTitle": true,
-                "title": "Location AGI"
-              }
-            }
-          },
-          "position": {
-            "x": 3,
-            "y": 0,
-            "width": 3,
-            "height": 1
-          }
-        },
-        {
-          "widget": {
-            "name": "41741d86",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "71ec36b7",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "BIRTHS2024_int",
-                      "expression": "`BIRTHS2024_int`"
-                    },
-                    {
-                      "name": "DEATHS2024_int",
-                      "expression": "`DEATHS2024_int`"
-                    },
-                    {
-                      "name": "NETMIG2024_int",
-                      "expression": "`NETMIG2024_int`"
-                    }
-                  ],
-                  "disaggregated": true
-                }
-              }
-            ],
-            "spec": {
-              "version": 3,
-              "widgetType": "bar",
-              "encodings": {
-                "x": {
-                  "fieldName": "location",
-                  "axis": {
-                    "labelAngle": 0
-                  },
-                  "scale": {
-                    "type": "categorical",
-                    "sort": {
-                      "by": "custom-order",
-                      "orderedValues": [
-                        "Dakota County, Minnesota",
-                        "Hennepin County, Minnesota",
-                        "Washington County, Minnesota",
-                        "Miami-Dade County, Florida"
-                      ]
-                    }
-                  },
-                  "displayName": "location"
-                },
-                "y": {
-                  "scale": {
-                    "type": "quantitative"
-                  },
-                  "fields": [
-                    {
-                      "fieldName": "BIRTHS2024_int",
-                      "displayName": "Births 2024"
-                    },
-                    {
-                      "fieldName": "DEATHS2024_int",
-                      "displayName": "Deaths 2024"
-                    },
-                    {
-                      "fieldName": "NETMIG2024_int",
-                      "displayName": "Net Migration 2024"
-                    }
-                  ],
-                  "axis": {
-                    "title": "Population"
-                  }
-                }
-              },
-              "mark": {
-                "layout": "group"
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 7,
-            "width": 6,
-            "height": 6
-          }
-        },
-        {
-          "widget": {
-            "name": "8b4326a4",
-            "queries": [
-              {
-                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location",
-                "query": {
-                  "datasetName": "71ec36b7",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "location_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-multi-select",
-              "encodings": {
-                "fields": [
-                  {
-                    "fieldName": "location",
-                    "displayName": "location",
-                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location"
-                  }
-                ]
-              },
-              "frame": {
-                "showTitle": true
-              },
-              "selection": {
-                "defaultSelection": {
-                  "values": {
-                    "dataType": "STRING",
-                    "values": [
-                      {
-                        "value": "Washington County, Minnesota"
-                      },
-                      {
-                        "value": "Hennepin County, Minnesota"
-                      },
-                      {
-                        "value": "Dakota County, Minnesota"
-                      },
-                      {
-                        "value": "Montgomery County, Texas"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 13,
-            "width": 6,
-            "height": 1
-          }
-        }
-      ],
-      "pageType": "PAGE_TYPE_CANVAS"
-    },
-    {
-      "name": "8767281e",
-      "displayName": "St. Johns County, Florida",
-      "layout": [
-        {
-          "widget": {
-            "name": "ec70914a",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "f6b1ca27",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "year",
-                      "expression": "`year`"
-                    },
-                    {
-                      "name": "population_int",
-                      "expression": "`population_int`"
-                    }
-                  ],
-                  "disaggregated": true
-                }
-              }
-            ],
-            "spec": {
-              "version": 3,
-              "widgetType": "line",
-              "encodings": {
-                "x": {
-                  "fieldName": "year",
-                  "scale": {
-                    "type": "categorical"
-                  },
-                  "axis": {
-                    "labelAngle": 0
-                  },
-                  "displayName": "year"
-                },
-                "y": {
-                  "fieldName": "population_int",
-                  "scale": {
-                    "type": "quantitative",
-                    "domain": {
-                      "min": 0
-                    }
-                  },
-                  "displayName": "Population"
-                },
-                "color": {
-                  "fieldName": "location",
-                  "scale": {
-                    "type": "categorical",
-                    "mappings": [
-                      {
-                        "value": "Hennepin County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 9
-                        }
-                      },
-                      {
-                        "value": "Miami-Dade County, Florida",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      },
-                      {
-                        "value": "Dakota County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 6
-                        }
-                      },
-                      {
-                        "value": "Washington County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 3
-                        }
-                      },
-                      {
-                        "value": "St. Johns County, Florida",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      }
-                    ]
-                  },
-                  "displayName": "location"
-                },
-                "label": {
-                  "show": true
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 1,
-            "width": 3,
-            "height": 6
-          }
-        },
-        {
-          "widget": {
-            "name": "eef08faf",
-            "queries": [
-              {
-                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location",
-                "query": {
-                  "datasetName": "f6b1ca27",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "location_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-multi-select",
-              "encodings": {
-                "fields": [
-                  {
-                    "fieldName": "location",
-                    "displayName": "location",
-                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07878647c1d1fabcc934b38f13c0b_location"
-                  }
-                ]
-              },
-              "frame": {
-                "showTitle": true
-              },
-              "selection": {
-                "defaultSelection": {
-                  "values": {
-                    "dataType": "STRING",
-                    "values": [
-                      {
-                        "value": "Hennepin County, Minnesota"
-                      },
-                      {
-                        "value": "Washington County, Minnesota"
-                      },
-                      {
-                        "value": "Dakota County, Minnesota"
-                      },
-                      {
-                        "value": "St. Johns County, Florida"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 0,
-            "width": 3,
-            "height": 1
-          }
-        },
-        {
-          "widget": {
-            "name": "fc4a6191",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "f128dad5",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "year",
-                      "expression": "`year`"
-                    },
-                    {
-                      "name": "AGI",
-                      "expression": "`AGI`"
-                    }
-                  ],
-                  "disaggregated": true
-                }
-              }
-            ],
-            "spec": {
-              "version": 3,
-              "widgetType": "line",
-              "encodings": {
-                "x": {
-                  "fieldName": "year",
-                  "scale": {
-                    "type": "categorical"
-                  },
-                  "axis": {
-                    "labelAngle": 0
-                  },
-                  "displayName": "year"
-                },
-                "y": {
-                  "fieldName": "AGI",
-                  "scale": {
-                    "type": "quantitative"
-                  },
-                  "displayName": "AGI"
-                },
-                "color": {
-                  "fieldName": "location",
-                  "scale": {
-                    "type": "categorical",
-                    "mappings": [
-                      {
-                        "value": "Miami-Dade County, Florida",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      },
-                      {
-                        "value": "Montgomery County, Texas",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      },
-                      {
-                        "value": "St. Johns County, Florida",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 2
-                        }
-                      },
-                      {
-                        "value": "Dakota County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 6
-                        }
-                      },
-                      {
-                        "value": "Washington County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 3
-                        }
-                      },
-                      {
-                        "value": "Hennepin County, Minnesota",
-                        "color": {
-                          "themeColorType": "visualizationColors",
-                          "position": 9
-                        }
-                      }
-                    ]
-                  },
-                  "displayName": "location"
-                },
-                "label": {
-                  "show": true
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 3,
-            "y": 1,
-            "width": 3,
-            "height": 6
-          }
-        },
-        {
-          "widget": {
-            "name": "cbdf625a",
-            "queries": [
-              {
-                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location",
-                "query": {
-                  "datasetName": "f128dad5",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "location_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-multi-select",
-              "encodings": {
-                "fields": [
-                  {
-                    "fieldName": "location",
-                    "displayName": "location",
-                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f07879eed615118129c8739f277fce_location"
-                  }
-                ]
-              },
-              "frame": {
-                "showTitle": true
-              },
-              "selection": {
-                "defaultSelection": {
-                  "values": {
-                    "dataType": "STRING",
-                    "values": [
-                      {
-                        "value": "Hennepin County, Minnesota"
-                      },
-                      {
-                        "value": "Washington County, Minnesota"
-                      },
-                      {
-                        "value": "St. Johns County, Florida"
-                      },
-                      {
-                        "value": "Dakota County, Minnesota"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 3,
-            "y": 0,
-            "width": 3,
-            "height": 1
-          }
-        },
-        {
-          "widget": {
-            "name": "4e7c0c9e",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "71ec36b7",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "BIRTHS2024_int",
-                      "expression": "`BIRTHS2024_int`"
-                    },
-                    {
-                      "name": "DEATHS2024_int",
-                      "expression": "`DEATHS2024_int`"
-                    },
-                    {
-                      "name": "NETMIG2024_int",
-                      "expression": "`NETMIG2024_int`"
-                    }
-                  ],
-                  "disaggregated": true
-                }
-              }
-            ],
-            "spec": {
-              "version": 3,
-              "widgetType": "bar",
-              "encodings": {
-                "x": {
-                  "fieldName": "location",
-                  "axis": {
-                    "labelAngle": 0
-                  },
-                  "scale": {
-                    "type": "categorical",
-                    "sort": {
-                      "by": "custom-order",
-                      "orderedValues": [
-                        "Dakota County, Minnesota",
-                        "Hennepin County, Minnesota",
-                        "Washington County, Minnesota",
-                        "St. Johns County, Florida"
-                      ]
-                    }
-                  },
-                  "displayName": "location"
-                },
-                "y": {
-                  "scale": {
-                    "type": "quantitative"
-                  },
-                  "fields": [
-                    {
-                      "fieldName": "BIRTHS2024_int",
-                      "displayName": "Births 2024"
-                    },
-                    {
-                      "fieldName": "DEATHS2024_int",
-                      "displayName": "Deaths 2024"
-                    },
-                    {
-                      "fieldName": "NETMIG2024_int",
-                      "displayName": "Net Migration 2024"
-                    }
-                  ],
-                  "axis": {
-                    "title": "Population"
-                  }
-                }
-              },
-              "mark": {
-                "layout": "group"
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 7,
-            "width": 6,
-            "height": 6
-          }
-        },
-        {
-          "widget": {
-            "name": "33a3000d",
-            "queries": [
-              {
-                "name": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location",
-                "query": {
-                  "datasetName": "71ec36b7",
-                  "fields": [
-                    {
-                      "name": "location",
-                      "expression": "`location`"
-                    },
-                    {
-                      "name": "location_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-multi-select",
-              "encodings": {
-                "fields": [
-                  {
-                    "fieldName": "location",
-                    "displayName": "location",
-                    "queryName": "dashboards/01f070d2a38c11039e4652159e4f5f7f/datasets/01f0787dd92c15f98332d11e2a028a2d_location"
-                  }
-                ]
-              },
-              "frame": {
-                "showTitle": true
-              },
-              "selection": {
-                "defaultSelection": {
-                  "values": {
-                    "dataType": "STRING",
-                    "values": [
-                      {
-                        "value": "Washington County, Minnesota"
-                      },
-                      {
-                        "value": "Hennepin County, Minnesota"
-                      },
-                      {
-                        "value": "Dakota County, Minnesota"
-                      },
-                      {
-                        "value": "St. Johns County, Florida"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 13,
-            "width": 6,
-            "height": 1
           }
         }
       ],
